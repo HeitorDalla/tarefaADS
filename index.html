@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cuidados com Dados Sensíveis - Inspirado em Snowden</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #004080;
+        }
+
+        form,
+        ul,
+        .modal {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        input,
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .modal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .modal a {
+            color: #4da6ff;
+            text-decoration: underline;
+        }
+
+        .modal button {
+            background-color: #4da6ff;
+            border: none;
+            margin-top: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Cuidados com Dados Sensíveis – Inspirado no Filme Snowden</h1>
+    <p>
+        O filme <em>Snowden</em> revela como a exposição indevida de informações pode comprometer a segurança de milhões
+        de pessoas.
+        Diante disso, um desenvolvedor front-end deve ser rigoroso com o tratamento de dados sensíveis.
+        Campos como CPF, e-mail e senhas devem ser tratados com máxima segurança, utilizando boas práticas como
+        criptografia,
+        uso de HTTPS e mascaramento de campos. Também é essencial informar o usuário sobre como seus dados serão
+        utilizados
+        e evitar o armazenamento local de dados críticos. A privacidade do usuário é uma responsabilidade compartilhada.
+    </p>
+
+    <h2>Formulário com Campos Sensíveis</h2>
+    <form>
+        <!-- O campo CPF exige mais cuidado porque é um dado pessoal sensível -->
+        <input type="text" name="cpf" placeholder="CPF">
+
+        <!-- O e-mail é um dado pessoal identificável que pode ser usado em fraudes -->
+        <input type="email" name="email" placeholder="E-mail">
+
+        <!-- A senha deve ser mascarada e nunca armazenada no front-end -->
+        <input type="password" name="senha" placeholder="Senha">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Checklist de Boas Práticas</h2>
+    <ul>
+        <li>✔️ Utilizar HTTPS em todas as páginas que enviam dados.</li>
+        <li>✔️ Informar claramente como os dados serão utilizados.</li>
+        <li>✔️ Nunca exibir senhas ou dados sensíveis no DOM visível.</li>
+        <li>✔️ Evitar o uso de LocalStorage ou SessionStorage para armazenar dados sensíveis.</li>
+        <li>✔️ Utilizar campos de input do tipo "password" para senhas.</li>
+        <li>✔️ Validar os dados antes do envio e higienizar entradas.</li>
+        <li>✔️ Implementar autenticação/autorização em áreas restritas.</li>
+        <li>✔️ Limitar a coleta de dados ao estritamente necessário.</li>
+    </ul>
+
+    <div id="modal-privacidade" class="modal">
+        <p>
+            Este site coleta dados pessoais. Ao prosseguir, você concorda com nossa
+            <a href="#">política de privacidade</a>.
+        </p>
+        <button onclick="document.getElementById('modal-privacidade').style.display='none'">OK, entendi</button>
+    </div>
+
+</body>
+
+</html>
